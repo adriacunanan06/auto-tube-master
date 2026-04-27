@@ -5,6 +5,8 @@ const { generateAudio } = require('./audio');
 const { fetchBroll } = require('./video');
 const { createFinalVideo } = require('./edit');
 const { uploadToYouTube, setThumbnail } = require('./upload');
+const { getYouTubeStats } = require('./stats');
+const { execSync } = require('child_process');
 
 // Create temp directory for storing assets
 const tempDir = path.join(__dirname, 'temp');
@@ -69,6 +71,23 @@ async function runPipeline(topic) {
     const thumbnailPath = path.join(tempDir, 'thumbnail.png');
     if (videoId && fs.existsSync(thumbnailPath)) {
         await setThumbnail(videoId, thumbnailPath);
+    }
+
+    // 7. Update Dashboard Stats
+    const statsData = await getYouTubeStats();
+    if (statsData) {
+        const dataPath = path.join(__dirname, 'dashboard', 'data.json');
+        fs.writeFileSync(dataPath, JSON.stringify(statsData, null, 2));
+        console.log(`✅ Dashboard data updated at ${dataPath}`);
+        
+        // Auto-push to GitHub to update live dashboard
+        try {
+            console.log('🔄 Syncing dashboard with GitHub...');
+            execSync('git add dashboard/data.json && git commit -m "Auto-update dashboard stats" && git push origin master', { stdio: 'inherit' });
+            console.log('✅ Live dashboard updated on Cloudflare Pages!');
+        } catch (err) {
+            console.warn('⚠️ GitHub sync failed (likely no changes or network issue)');
+        }
     }
 
     console.log(`\n🎉 PIPELINE COMPLETE! Your video is ready at: ${finalOutputPath}`);

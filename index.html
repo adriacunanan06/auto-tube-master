@@ -178,7 +178,7 @@
         // Fetch Real Data
         async function updateDashboard() {
             try {
-                const response = await fetch('data.json?v=' + Date.now());
+                const response = await fetch('data.json');
                 const data = await response.json();
                 
                 document.getElementById('stat-views').textContent = Number(data.totalViews).toLocaleString();
