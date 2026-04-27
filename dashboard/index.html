@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Tube Cinematic Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow {
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+            background: rgba(59, 130, 246, 0.02);
+        }
+        transition { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-8 py-6 border-b border-white/5 glass sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center glow">
+                <i data-lucide="zap" class="text-white fill-white"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight">Auto-Tube <span class="text-blue-500">Master</span></span>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+            <a href="#" class="hover:text-white transition">Dashboard</a>
+            <a href="#" class="hover:text-white transition">Analytics</a>
+            <a href="#" class="hover:text-white transition">History</a>
+            <a href="#" class="hover:text-white transition">Settings</a>
+        </div>
+        <button class="px-5 py-2.5 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition">
+            Launch New Video
+        </button>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-8 py-12">
+        <!-- Hero Stats -->
+        <header class="mb-16">
+            <h1 class="text-5xl font-bold mb-4 gradient-text">Cinematic Revenue Engine</h1>
+            <p class="text-gray-400 max-w-2xl text-lg">Fully autonomous AI video production for Pound for Pound Finance. High retention, high CTR, zero effort.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="glass p-6 rounded-3xl card-hover transition glow">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-400 text-sm">Total Views</span>
+                    <i data-lucide="trending-up" class="text-green-400 w-5 h-5"></i>
+                </div>
+                <div class="text-3xl font-bold">124.5K</div>
+                <div class="text-xs text-green-400 mt-2">+12% from last week</div>
+            </div>
+            <div class="glass p-6 rounded-3xl card-hover transition">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-400 text-sm">Videos Live</span>
+                    <i data-lucide="video" class="text-blue-400 w-5 h-5"></i>
+                </div>
+                <div class="text-3xl font-bold">48</div>
+                <div class="text-xs text-gray-500 mt-2">Target: 100</div>
+            </div>
+            <div class="glass p-6 rounded-3xl card-hover transition">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-400 text-sm">Avg. Retention</span>
+                    <i data-lucide="clock" class="text-purple-400 w-5 h-5"></i>
+                </div>
+                <div class="text-3xl font-bold">68%</div>
+                <div class="text-xs text-purple-400 mt-2">Cinematic Benchmark</div>
+            </div>
+            <div class="glass p-6 rounded-3xl card-hover transition">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-gray-400 text-sm">Subscribers</span>
+                    <i data-lucide="users" class="text-orange-400 w-5 h-5"></i>
+                </div>
+                <div class="text-3xl font-bold">12.2K</div>
+                <div class="text-xs text-orange-400 mt-2">+450 today</div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+                    <i data-lucide="history" class="w-6 h-6"></i>
+                    Recent Productions
+                </h2>
+                <div class="space-y-4">
+                    <div class="glass p-4 rounded-2xl flex items-center gap-6 card-hover transition">
+                        <div class="w-32 h-20 bg-gray-800 rounded-xl overflow-hidden relative group">
+                            <div class="absolute inset-0 bg-blue-600/20 group-hover:bg-blue-600/0 transition"></div>
+                            <img src="https://images.pexels.com/photos/259132/pexels-photo-259132.jpeg?auto=compress&cs=tinysrgb&w=300" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold">5 UK Habits Secretly Draining Your Cash</h3>
+                            <p class="text-gray-500 text-sm">Uploaded 2 hours ago • 10:04</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="px-3 py-1 bg-green-500/10 text-green-500 text-xs font-bold rounded-full">PUBLIC</span>
+                            <button class="p-2 hover:bg-white/5 rounded-lg transition"><i data-lucide="external-link" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                    <div class="glass p-4 rounded-2xl flex items-center gap-6 card-hover transition">
+                        <div class="w-32 h-20 bg-gray-800 rounded-xl overflow-hidden relative group">
+                            <img src="https://images.pexels.com/photos/5849559/pexels-photo-5849559.jpeg?auto=compress&cs=tinysrgb&w=300" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold">Cost of Living Survival Guide 2024</h3>
+                            <p class="text-gray-500 text-sm">Uploaded Yesterday • 12:15</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="px-3 py-1 bg-green-500/10 text-green-500 text-xs font-bold rounded-full">PUBLIC</span>
+                            <button class="p-2 hover:bg-white/5 rounded-lg transition"><i data-lucide="external-link" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline Status -->
+            <div class="glass p-8 rounded-3xl h-fit sticky top-32">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <i data-lucide="activity" class="w-6 h-6 text-blue-500"></i>
+                    Engine Status
+                </h2>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray-400">ElevenLabs Credit</span>
+                            <span>84%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div class="w-[84%] h-full bg-blue-500 glow"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray-400">Gemini 1.5 Tokens</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div class="w-[92%] h-full bg-purple-500 glow"></div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-white/5">
+                        <div class="flex items-center gap-3 text-sm text-green-400">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            System Online
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Latest Script: 5 Habits Killing Your UK Finances</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
