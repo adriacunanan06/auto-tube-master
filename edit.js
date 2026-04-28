@@ -28,9 +28,13 @@ async function renderScene(sceneData, index, outputPath) {
       // Simplified drawtext filter to avoid "Invalid argument" errors on Windows
       const filtergraph = `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=30[bg];[bg]drawtext=text='${caption}':fontcolor=white:fontsize=80:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black[v]`;
 
+      const inputOptions = sceneData.isImage 
+        ? ['-loop 1'] 
+        : ['-stream_loop', '-1'];
+
       ffmpeg()
         .input(sceneData.videoPath)
-        .inputOptions(['-stream_loop', '-1']) // Loop video in case it's shorter than audio
+        .inputOptions(inputOptions)
         .input(sceneData.audioPath)
         .complexFilter(filtergraph, 'v')
         .outputOptions([

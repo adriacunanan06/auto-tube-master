@@ -55,8 +55,10 @@ FINAL PUSH (Scene 41–45)
 
 CTA (Scene 46–48)
 * Explicitly tell viewers to subscribe to 'Pound for Pound Finance'.
+* IMPORTANT: Use "host" as the visual_query for Scene 1 (Hook) and Scene 48 (CTA) and occasionally throughout the video to show the AI Narrator.
 
 VISUAL RULES:
+* Use "host" as the visual_query for scenes where the AI Narrator should be on screen.
 * No generic “stock footage”
 * Be VERY specific
 * Example: “close-up of UK electricity bill showing £300+”

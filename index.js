@@ -41,18 +41,25 @@ async function runPipeline(topic) {
         const audioPath = path.join(tempDir, `scene_${i}.mp3`);
         await generateAudio(scene.voiceover, audioPath);
         
-        // Video
-        const videoPath = path.join(tempDir, `scene_broll_${i}.mp4`);
-        const downloadedVideo = await fetchBroll(scene.visual_query, videoPath);
+        // Video / Host
+        let videoPath;
+        if (scene.visual_query === 'host') {
+            videoPath = path.join(__dirname, 'host_avatar.png');
+            console.log(`👤 Using AI Host Avatar for Scene ${i + 1}`);
+        } else {
+            const downloadPath = path.join(tempDir, `scene_broll_${i}.mp4`);
+            videoPath = await fetchBroll(scene.visual_query, downloadPath);
+        }
         
-        if (downloadedVideo) {
+        if (videoPath) {
             processedScenes.push({
-                videoPath: downloadedVideo,
+                videoPath: videoPath,
                 audioPath: audioPath,
-                caption: scene.caption
+                caption: scene.caption,
+                isImage: scene.visual_query === 'host'
             });
         } else {
-            console.warn(`⚠️ Skipping scene ${i + 1} due to missing B-roll`);
+            console.warn(`⚠️ Skipping scene ${i + 1} due to missing visual`);
         }
     }
 
