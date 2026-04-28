@@ -43,7 +43,7 @@ async function runPipeline(topic) {
         
         // Video / Host
         let videoPath;
-        if (scene.visual_query === 'host') {
+        if (/host/i.test(scene.visual_query)) {
             videoPath = path.join(__dirname, 'host_avatar.png');
             console.log(`👤 Using AI Host Avatar for Scene ${i + 1}`);
         } else {
@@ -56,7 +56,7 @@ async function runPipeline(topic) {
                 videoPath: videoPath,
                 audioPath: audioPath,
                 caption: scene.caption,
-                isImage: scene.visual_query === 'host'
+                isImage: /host/i.test(scene.visual_query)
             });
         } else {
             console.warn(`⚠️ Skipping scene ${i + 1} due to missing visual`);
