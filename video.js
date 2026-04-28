@@ -36,7 +36,7 @@ async function fetchBroll(query, outputPath) {
       params: {
         query: query,
         per_page: 5,
-        orientation: 'portrait' // TikTok/Shorts format
+        orientation: 'landscape' // YouTube Widescreen format
       }
     });
 

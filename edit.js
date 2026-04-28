@@ -23,10 +23,10 @@ async function renderScene(sceneData, index, outputPath) {
       
       const caption = escapeDrawtext(sceneData.caption || '');
       
-      // 1. Scale/Crop to 1080x1920
+      // 1. Scale/Crop to 1920x1080
       // 2. Draw text in the middle
       // Simplified drawtext filter to avoid "Invalid argument" errors on Windows
-      const filtergraph = `[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30[bg];[bg]drawtext=text='${caption}':fontcolor=white:fontsize=80:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black[v]`;
+      const filtergraph = `[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,fps=30[bg];[bg]drawtext=text='${caption}':fontcolor=white:fontsize=80:x=(w-text_w)/2:y=(h-text_h)/2:borderw=4:bordercolor=black[v]`;
 
       ffmpeg()
         .input(sceneData.videoPath)

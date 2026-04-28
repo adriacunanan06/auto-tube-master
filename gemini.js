@@ -27,8 +27,7 @@ SCENE RULES:
 * Max clarity
 
 STYLE:
-* Fast-paced like TikTok + YouTube Shorts hybrid
-* Cinematic but simple
+* Style: Cinematic widescreen (16:9)
 * Real-life UK visuals (London streets, Tesco, bills, banking apps, rent, etc.)
 
 STRUCTURE:
