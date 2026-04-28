@@ -1,9 +1,15 @@
 {
   "channelName": "Pound for Pound Finance",
-  "totalViews": "0",
+  "totalViews": "44",
   "subscribers": "0",
-  "videoCount": "5",
+  "videoCount": "6",
   "recentVideos": [
+    {
+      "title": "Your 20s: Broke or Building Wealth? (UK Finance Guide)",
+      "publishedAt": "2026-04-28T22:35:34+00:00",
+      "thumbnail": "https://i.ytimg.com/vi/fBs9o8qV4gQ/hqdefault.jpg",
+      "videoId": "fBs9o8qV4gQ"
+    },
     {
       "title": "The 5 Sneaky Habits Keeping You POOR in the UK (STOP NOW!)",
       "publishedAt": "2026-04-27T08:18:27+00:00",
@@ -27,13 +33,7 @@
       "publishedAt": "2026-04-27T08:16:08+00:00",
       "thumbnail": "https://i.ytimg.com/vi/kCVfsK9Jo9I/hqdefault.jpg",
       "videoId": "kCVfsK9Jo9I"
-    },
-    {
-      "title": "5 Habits Keeping You BROKE! (STOP NOW!)",
-      "publishedAt": "2026-04-27T08:16:08+00:00",
-      "thumbnail": "https://i.ytimg.com/vi/-QC96c7bF4g/hqdefault.jpg",
-      "videoId": "-QC96c7bF4g"
     }
   ],
-  "lastUpdated": "2026-04-27T09:58:58.912Z"
+  "lastUpdated": "2026-04-28T22:49:34.528Z"
 }
