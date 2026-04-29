@@ -6,6 +6,7 @@ const { fetchBroll } = require('./video');
 const { createFinalVideo } = require('./edit');
 const { uploadToYouTube, setThumbnail } = require('./upload');
 const { getYouTubeStats } = require('./stats');
+const { fetchThumbnailPhoto, createThumbnail } = require('./thumbnail');
 const { execSync } = require('child_process');
 
 // Create temp directory for storing assets
@@ -61,6 +62,16 @@ async function runPipeline(topic) {
         } else {
             console.warn(`⚠️ Skipping scene ${i + 1} due to missing visual`);
         }
+    }
+
+    // 3.5 Generate Dynamic Thumbnail
+    console.log(`\n🖼️ Generating unique thumbnail for: "${scriptData.title}"...`);
+    const thumbBgPath = path.join(tempDir, 'thumb_bg.jpg');
+    const finalThumbPath = path.join(tempDir, 'thumbnail.png');
+    
+    const hasBg = await fetchThumbnailPhoto(scriptData.thumbnail_query || topic, thumbBgPath);
+    if (hasBg) {
+        await createThumbnail(thumbBgPath, scriptData.thumbnail_text || "MUST WATCH", finalThumbPath);
     }
 
     if (processedScenes.length === 0) {

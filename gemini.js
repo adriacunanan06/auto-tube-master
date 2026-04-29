@@ -86,6 +86,8 @@ You MUST output your ENTIRE response as a strictly valid JSON object matching th
 {
   "title": "One of your 5 clickable YouTube titles",
   "description": "Your optimized description",
+  "thumbnail_query": "A search term for a dramatic/shocking finance photo on Pexels (e.g., 'broke man', 'luxury car', 'piles of cash')",
+  "thumbnail_text": "3-4 punchy, emotional words for the thumbnail (e.g., 'THE BIGGEST TRAP', 'QUIT NOW', 'SECRET WEALTH')",
   "scenes": [
     {
       "voiceover": "The exact short sentence to be spoken",
